@@ -9,7 +9,6 @@ For docs on Spring Security and Thymeleaf integration, see this link
 
 SQL Scripts
 ===========
-These are the same SQL scripts used in the course.
 - employee.sql: Creates the employee table and loads sample data
 
 - setup-spring-security-bcrypt-demo-database.sql: Creates login accounts with encrypted passwords
@@ -114,9 +113,9 @@ a. Configure Spring Data JPA
 
 This tells the app that we are using JPA repositories defined in the given package. The package name is read from the application.properties file.
 
-spring.data.jpa.repository.packages=com.luv2code.springboot.thymeleafdemo.dao
+spring.data.jpa.repository.packages=com.springboot.thymeleafdemo.dao
 
-In this case, the package name is: com.luv2code.springboot.thymeleafdemo.dao, so Spring Data JPA will scan for JPA repositories in this package. Spring Data JPA makes use of a entity manager factory bean and transacation manager. 
+In this case, the package name is: com.springboot.thymeleafdemo.dao, so Spring Data JPA will scan for JPA repositories in this package. Spring Data JPA makes use of a entity manager factory bean and transacation manager. 
 By default it will use a bean named, "entityManagerFactory". We manually configure this bean in this class. Also, by default, Spring Data JPA will use a bean named "transactionManager". The "transactionManager" bean is autoconfigured by Spring Boot.
 
 b. Configure application DataSource
@@ -150,7 +149,7 @@ c. Configure EntityManagerFactory
 
 The entity manager factory tells Spring Data JPA which packages to scan for JPA entities. The @ConfigurationProperties will read properties from the config file (application.properties). It will read the properties from the file with the prefix: "spring.data.jpa.entity". So it will read the following:
 
-spring.data.jpa.entity.packages-to-scan=com.luv2code.springboot.thymeleafdemo.entity
+spring.data.jpa.entity.packages-to-scan=com.springboot.thymeleafdemo.entity
 
 d. Configure Data Source for Security
 
